@@ -1,0 +1,405 @@
+<html>
+<head>
+    <style>
+     
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('https://github.com/TatoLopezV/CONI-Imagenes/blob/main/fondo.png?raw=true');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+        }
+
+#Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window
+{
+    position: fixed;
+    width: 375px !important;
+    max-width: 375px !important;
+    max-height: 575px !important;;
+    height: 575px !important;
+    
+}
+
+    @media (max-width: 470px) {
+        #Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window {
+            top: auto !important;
+            width: 375px; 
+            height: 575px; 
+            right: 10px; 
+            left: auto !important;
+            bottom: 10px; 
+        }
+
+}
+
+
+
+        </style>
+
+</head>
+<body>
+
+
+        <script>
+            const iframe = document.querySelector('#Microsoft_Omnichannel_LCWidget_Chat_Iframe_Window');
+            if (iframe) {
+                const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+                const style = document.createElement('style');
+                style.textContent = `
+                    .oc-lcw-container {
+                        padding: 10px;
+                        background-color: #f5f5f5;
+                        border-radius: 8px;
+                    }
+                `;
+                iframeDocument.head.appendChild(style);
+            }
+            function lcw() {
+                return {
+
+                    webChatContainerProps: {
+                        renderingMiddlewareProps: {
+                            avatarStyleProps: {
+                                backgroundImage: "url(https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/main/LogoRentas.png)",
+                                backgroundSize: "100%",
+                                backgroundColor: "#00AAE2"
+                            },
+                            avatarTextStyleProps: {
+                                display: "none",
+                                
+                            },
+                            adaptiveCardStyles: {
+                                background: "white",
+                                color: "black",
+                                height: "auto",
+                                padding: "10px",
+                                width: "auto",
+                                bubbleMinWidth: "400px",
+                                bubbleTextColor: "black",
+                                bubbleBackground: "black",
+                                selectors: {
+                                    "&:hover": {
+                                        bubbleTextColor: "black",
+                                        bubbleBackground: "white",
+                                        anchorColor: "blue"
+                                     
+                                                                                                     
+                                    },
+                                    "&:focus": {
+                                        bubbleTextColor: "black",
+                                        bubbleBackground: "white",
+                                        anchorColor: "blue"
+                                        
+                                    },
+                                }
+                            }
+                        },
+                        webChatStyles: {
+                            bubbleBackground: "#00AAE2",
+                            bubbleBackground: "white",
+                            bubbleTextColor: "black",
+                            bubbleAnchorColor: "blue",
+                            anchorColor: "blue",
+                            bubbleMaxWidth: "355px",
+                            bubbleFromUserBackground: "white",
+                            bubbleFromUserTextColor: "black",
+                            suggestedActionBackgroundColor: "black",
+                            suggestedActionBorderColor: "#315fa2",
+                            suggestedActionTextColor: "#315fa2",
+                            selectors: {
+                                "&:hover": {
+                                    suggestedActionTextColor: "#315fa2",
+                                                                                             
+                                },
+                                "&:focus": {
+                                    suggestedActionTextColor: "#315fa2",
+                                    
+                                },
+                            },
+
+
+                        },
+                        containerStyles: {
+                            maxWidth: "375px",
+                            maxHeight: "575px",
+                            right: "0",
+                            bottom: "0",
+                        },
+
+                    },
+                    styleProps: {
+                        generalStyles: {
+                            position: "fixed",
+                            display: "flex",
+                            right: "0",
+                            bottom: "0",
+                            transform: "none",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            flexDirection: "column",
+                            maxWidth: "375px",
+                            maxHeight: "575px",
+                        }
+                    },
+                    loadingPaneProps: {
+                        controlProps: {
+                            titleText: "Rentas Córdoba",
+                            subtitleText: "Chat en línea",
+                            hideSpinnerText: true,
+                            spinnerSize: 3
+                        },
+                        styleProps: {
+                            titleStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontSize: "22px",
+                                fontWeight: "700"
+                            },
+                            subtitleStyleProps: {
+                                fontSize: "14px"
+                            }
+                        }
+                    },
+                    chatButtonProps: {
+                        controlProps: {
+                            hideChatSubtitle: true,
+                            hideChatTextContainer: true
+                        },
+                        styleProps: {
+                            generalStyleProps: {
+                                height: "80px",
+                                backgroundColor: "",
+                                backgroundSize: "contain",
+                                borderColor: "",
+                                boxShadow: "",
+                                cursor: "pointer",
+                                display: "flex",
+                                position: "fixed",
+                                justifyContent: "center",
+                                borderWidth: "1px",
+                                alignItems: "center",
+                                margin: "0px",
+                                bottom: "0px",
+                                padding: "0px",
+                                borderStyle: "none",
+                                backgroundColor: "transparent",
+                                transition: "width 0.4s, height 0.4s",
+                                selectors: {
+                                    "&:hover": {
+                                        width: "100px",
+                                        height: "90px",
+                                    },
+                                    "&:focus": {
+                                        outline: "none"
+                                    },
+                                },
+                                width: "100px",
+                            },
+                            iconStyleProps: {
+                                width: "150px",
+                                height: "80px",
+                                cursor: "pointer",
+                                backgroundImage: "url(https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/refs/heads/main/Pasive.png)",
+                                backgroundSize: "contain",
+                                borderRadius: "100%",
+                                display: "flex",
+                                justifyContent: "center",
+                                margin: "-2px -2px -2px -3px",
+                                borderStyle: "none",
+                                borderRadius: "unset",
+                                selectors: {
+                                    "&:hover": {
+                                        width: "160px",
+                                        height: "350px",
+                                        backgroundImage: "url(https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/refs/heads/main/Active.png)",
+                                    },
+                                    "&:focus": {
+                                        outline: "none"
+                                    },
+                                }
+                            },
+                        },
+                        notificationBubbleStyleProps: {
+                            right: "15px",
+                            lineHeight: "22px",
+                            padding: "1px",
+                            position: "fixed",
+                            top: "0px",
+                            minHeight: "18px",
+                            minWidth: "24px",
+                        },
+                    },
+                    headerProps: {
+                        controlProps: {
+                            headerTitleProps: {
+                                text: "Chat"
+                            },
+                            headerIconProps: {
+                                src: "https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/refs/heads/main/Logo%20encabezado.png",
+                            },
+                        },
+
+                            titleStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontWeight: "700"
+                            },
+                        },
+                    
+
+
+                    confirmationPaneProps: {
+                        controlProps: {},
+                        styleProps: {
+                            generalStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontWeight: "700",
+                                fontStyle: "normal",
+                                backgroundColor: "white"
+                            },
+                            confirmButtonStyleProps: {
+                                backgroundColor: "#E2464C"
+                            },
+                            subtitleStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontWeight: "700"
+                            },
+                            titleStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontWeight: "700"
+                            }
+                        }
+                    },
+                    outOfOfficeHeaderProps: {
+                        controlProps: {
+                            headerTitleProps: {
+                                text: "Chat",
+                            },
+                            headerIconProps: {
+                                src: "https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/refs/heads/main/Logo%20encabezado%20fuera%20de%20hora.png",
+                            }
+                        },
+                        styleProps: {
+                            titleStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontWeight: "700"
+                            },
+                        }
+                    },
+                    outOfOfficeChatButtonProps: {
+                        controlProps: {
+                            hideChatSubtitle: true,
+                            hideChatTextContainer: true
+                        },
+                        styleProps: {
+                            generalStyleProps: {
+                                height: "80px",
+                                backgroundColor: "",
+                                backgroundSize: "contain",
+                                borderColor: "",
+                                bottom: "0px",
+                                padding: "0px",
+                                boxShadow: "",
+                                cursor: "pointer",
+                                position: "flex",
+                                display: "flex",
+                                justifyContent: "center",
+                                margin: "0px",
+                                borderWidth: "1px",
+                                alignItems: "center",
+                                borderStyle: "none",
+                                backgroundColor: "transparent",
+                                transition: "width 0.4s, height 0.4s",
+                                selectors: {
+                                    "&:hover": {
+                                        backgroundColor: "transparent",
+                                        width: "100px",
+                                        height: "90px",
+                                    },
+                                    "&:focus": {
+                                        outline: "none"
+                                    },
+                                },
+                                width: "100px",
+                            },
+                            iconStyleProps: {
+                                width: "150px",
+                                height: "80px",
+                                cursor: "pointer",
+                                backgroundImage: "url(https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/refs/heads/main/Inactive%20default.png)",
+                                backgroundSize: "contain",
+                                backgroundColor: "transparent",
+                                borderRadius: "100%",
+                                borderStyle: "none",
+                                display: "flex",
+                                justifyContent: "center",
+                                borderStyle: "none",
+                                borderRadius: "unset",
+                                margin: "-2px -2px -2px -3px",
+                                selectors: {
+                                    "&:hover": {
+                                        width: "160px",
+                                        height: "350px",
+                                        backgroundImage: "url(https://raw.githubusercontent.com/TatoLopezV/CONI-Imagenes/refs/heads/main/Inactive%20hover.png)"
+                                    },
+                                    "&:focus": {
+                                        outline: "none"
+                                    }
+                                }
+                            }
+                        },
+                    },
+                    outOfOfficePaneProps: {
+                        styleProps: {
+                            titleStyleProps: {
+                                fontFamily: "IBM Plex Sans",
+                                fontWeight: "700"
+                            }
+                        }
+                    },
+                    preChatSurveyPaneProps: {
+                        styleProps: {
+                            customButtonStyleProps: {
+                                "backgroundColor": "#E2464C",
+                                "color": "white",
+                            }
+                        }
+                    },
+                }
+            }
+    
+            // Agregar console.log() para inspeccionar el objeto completo
+            console.log(lcw());
+            console.dir(lcw()); // Mostrar la estructura completa y las propiedades
+
+            for (let key in lcw) {
+                if (lcw.hasOwnProperty(key)) {
+                    console.log(key, lcw[key]);
+                }
+            }
+            
+        </script>
+
+        <script id="Microsoft_Omnichannel_LCWidget"
+        
+            src="https://oc-cdn-public-sam.azureedge.net/livechatwidget/scripts/LiveChatBootstrapper.js"
+            data-app-id="06d6a292-a5ba-4777-9e60-ee958d252e85"
+            data-lcw-version="prod"
+            data-org-id="7970bb56-eca4-4611-8856-4309c05520d2"
+            data-org-url="https://d1daed007d1c412697c553751e484f-crm2.omnichannelengagementhub.com"
+            data-hide-chat-button="false"
+            data-hide-outOfOffice-chat-button="false"
+            data-color-override="linear-gradient(to right,  #E2464C,#AF4178)"
+            data-font-family-override="IBM Plex Sans Medium"
+            data-enable-lcw-autofill="false"
+            data-customization-callback="lcw">
+        </script>
+    
+        ></div>
+    </body>
+    </html>
+    
+</html>
